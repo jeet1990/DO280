@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-limit
+  name: hello-limit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-limit
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-limit
+    spec:
+      containers:
+      - image: quay.io/redhattraining/hello-world-ngix:v1.0
+        name: hello-world-ngix
+        resources: {}
+status: {}
